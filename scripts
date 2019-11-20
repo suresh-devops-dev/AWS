@@ -8,8 +8,7 @@ IP_ADDRESS=$(echo $INSTANCE_DESCRIPTION | jq -r '.Reservations[0].Instances[0].N
 PrivateIP
 ===========
 
-aws ec2 describe-instances --instance-ids | jq -r '.Reservations[0].Instances[0].NetworkInterfaces[0].PrivateIpAddress'
-
+aws ec2 describe-instances --instance-ids --region eu-central-1 | jq -r '.Reservations[0].Instances[0].NetworkInterfaces[0].PrivateIpAddress'
 
 
 2) Windows
